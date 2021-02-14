@@ -9,7 +9,6 @@ Game::Game()
 {
     this->entities = {};
     this->running = false;
-    this->window = nullptr;
 }
 
 void Game::init()
@@ -27,11 +26,15 @@ void Game::init()
         std::cout << "Image initialization has failed. Error: " << SDL_GetError() << std::endl;
     }
 
+    std::cout << "Window initialization begin.\n";
     this->window = initializeWindow();
+
     if (&window == nullptr)
     {
         std::cout << "Failed to initialize window. Error: " << SDL_GetError() << std::endl;
     }
+    std::cout << "Window initialized.\n";
+
     this->initializeEntities();
 
     SDL_Event event;

@@ -1,7 +1,7 @@
 #include "entity.h"
 #include "renderwindow.h"
 
-Entity::Entity(SDL_Texture *texture, SDL_Rect *src, SDL_Rect *dst) : texture(texture), src(src), dst(dst)
+Entity::Entity(SDL_Texture *texture, SDL_Rect src, SDL_Rect dst) : texture(texture), src(src), dst(dst)
 {
 }
 
@@ -14,10 +14,10 @@ SDL_Texture *Entity::getTexture()
 
 SDL_Rect *Entity::getCurrentFrame()
 {
-    return src;
+    return &src;
 }
 
 void Entity::render(RenderWindow *window)
 {
-    window->render(this->texture, this->src, this->dst);
+    window->render(this->texture, &src, &dst);
 }

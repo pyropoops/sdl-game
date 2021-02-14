@@ -7,6 +7,7 @@ class RenderWindow
 {
 public:
     RenderWindow(const char *title, int width, int height);
+    RenderWindow();
     void cleanUp();
     SDL_Texture *loadTexture(const char *filepath);
     void clear();

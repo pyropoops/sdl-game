@@ -14,6 +14,12 @@ RenderWindow::RenderWindow(const char *title, int width, int height)
     this->renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 }
 
+RenderWindow::RenderWindow()
+{
+    this->window = nullptr;
+    this->renderer = nullptr;
+}
+
 void RenderWindow::cleanUp()
 {
     SDL_DestroyWindow(window);

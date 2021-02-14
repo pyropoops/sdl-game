@@ -7,7 +7,7 @@
 class Entity
 {
 public:
-    Entity(SDL_Texture *texture, SDL_Rect *src, SDL_Rect *dst);
+    Entity(SDL_Texture *texture, SDL_Rect src, SDL_Rect dst);
     Entity(SDL_Texture *texture);
     SDL_Texture *getTexture();
     SDL_Rect *getCurrentFrame();
@@ -15,7 +15,7 @@ public:
 
 protected:
     SDL_Texture *texture;
-    SDL_Rect *src;
-    SDL_Rect *dst;
+    SDL_Rect src;
+    SDL_Rect dst;
     RenderWindow *window;
 };
